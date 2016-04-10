@@ -1,0 +1,34 @@
+a deque also known as double ended queue is an ordered collection of items similar to
+a queue but has two ends, the front and the rear and the items remain positioned in
+the collection.
+
+However, unlike a queue, a deque has an unrestrictive nature of removing and adding items
+to it. Items can be added on either side and removed from either side. A deque does not
+require a LIFO or FIFO ordering just consistency when adding and removing items.
+
+## Deque Abstract Data Types
+The Deque abstract datatype is defined byt the following structure and operations.
+
+-Deque(): creates a new deque that is empty. Returns an empty deque.
+-addFront(item): adds a new item to the front of the deque. Takes in item as a param
+and returns nothing
+-addRear(item): adds a new item to the rear of the deque. Takes in item as a param
+and returns nothing
+- removeFront(): removes an item from the front of the deque. it needs no param and
+returns the item. The deque is modified.
+- removeRear(): removes an item from the rear of the deque. it needs no param and
+returns the item. The deque is modified.
+-isEmpty(): checks to see whether the deque is empty. Returns a boolean value
+-size: length of the deque. # of items inside the deque.
+
+Deque Operation 	Deque Contents 	        Return Value
+d.isEmpty() 	        []          	        True
+d.addRear(4) 	        [4]
+d.addRear('dog') 	  ['dog',4,]
+d.addFront('cat') 	['dog',4,'cat']
+d.addFront(True) 	['dog',4,'cat',True]
+d.size() 	        ['dog',4,'cat',True] 	      4
+d.isEmpty() 	    ['dog',4,'cat',True] 	    False
+d.addRear(8.4)  	[8.4,'dog',4,'cat',True]
+d.removeRear() 	    ['dog',4,'cat',True] 	     8.4
+d.removeFront() 	['dog',4,'cat'] 	        True
