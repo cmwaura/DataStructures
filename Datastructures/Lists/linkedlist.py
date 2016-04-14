@@ -105,3 +105,34 @@ class UnorderedList:
 
         return found
 
+    def remove(self, item):
+        current = self.head
+        # remember that previous is one step behind so when current is assigned the header,
+        # prev will be assigned none.
+        previous = None
+        found = False
+
+        while not found:
+            # at this point we will iterate through the nodes and when we find the node
+            # that we are looking for we will return a value of true. Else, we will move previous
+            # to the current step then move current to the next step.
+
+            if current.getData() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+
+        # once we have found the item we are looking for, then we have to check for the case where the
+        # item was actually the header. In that case then the header becomes the next element
+        # else if that wasnt the case then we will shift the link and set the next item of previous as the
+        # next item of current.
+
+        if previous == None:
+
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+
+
+
