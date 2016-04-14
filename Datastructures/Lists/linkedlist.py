@@ -134,5 +134,97 @@ class UnorderedList:
         else:
             previous.setNext(current.getNext())
 
+class OrderedList:
+    '''
+    before we move ahead it is worth noting that the methods size(), isEmpty() and remove()
+    will be the same as the unordered list. What changes is the adding method and search method
+    '''
+
+    def __init__(self):
+        self.head = None
+
+    def isEmpty(self):
+        '''
+        checks to see if the header is None. If true it will return True else False
+        :return: bool
+        '''
+        return self.head == None
+
+    def size(self):
+        current = self.head
+        count = 0
+        while current != None:
+            count += 1
+            current = current.getNext()
+
+        return count
+
+
+
+    def remove(self, item):
+        current = self.head
+        previous = None
+        found = False
+
+        while not found:
+            if current.getData() == item:
+
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+
+    def add(self, item):
+        current = self.head
+        stop = False
+        found = False
+        previous = None
+
+        while current != None and not stop:
+            if current.getData() > item:
+                stop = True
+            else:
+                previous = current
+                current = current.getNext()
+        temp = Node(item)
+        if previous == None:
+            # if previous is the none value but the header value is greater than the
+            # item we are looking for. We will set the item at the header
+            temp.setNext(self.head)
+            self.head = temp
+        else:
+            temp.getNext(current)
+            previous.setNext(temp)
+
+
+    def search(self, item):
+        '''
+        we will search for the item in an ordered linked list. When stop is true the search will stop
+        and while false it will keep on going until it finds the item or stop is set to be true.
+        :param item: item to be searched for
+        :return: found to be true or false.
+        '''
+
+        current = self.head
+        stop = False
+        found = False
+
+        while current != None and not stop and not found:
+            if current.getData() == item:
+                found = True
+            else:
+                if current.getData() > item:
+                    stop = True
+                else:
+                    current.getNext()
+        return found
+
+
+
+
 
 
