@@ -8,7 +8,7 @@ def drawTriangle(points, color, myTurtle):
     myTurtle.begin_fill()
     myTurtle.goto(points[1][0], points[1][1])
     myTurtle.goto(points[2][0], points[2][1])
-    myTurtle.goto(points[0][0], points[0][1])
+    myTurtle.goto(points[0][0], points[0]gi[1])
     myTurtle.end_fill()
 
 def getMid(p1, p2):
