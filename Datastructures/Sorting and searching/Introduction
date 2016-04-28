@@ -1,0 +1,45 @@
+## Searching.
+
+Algorithmic process of finding a particular item in a collection of items. A search either answers True or False as to
+whether an item is present.
+In python we use in to ask whether an item is in the list.
+for instance::
+
+        >>> 15 in [3,5,2,4,1]
+        False
+        >>> 3 in [3,5,2,4,1]
+        True
+
+### Sequential Search
+
+The sequential search as the name suggest is searching in a particular sequence. We start with the first item and then
+move on the next item. This goes on until we find the item that we are looking for or we run out of items. If we run out
+items, then we can safely assume that the item is not present.
+
+A python implementation is shown in search.py wehre we initialize a boolean value to false and search through a list for
+an item. If the item is found then the bool value turns to true else we move to the next item.
+
+### Analysis of Sequential Search:
+what do you think is the O time fora sequential search- O(n) maybe?
+
+Well its true that it is O(n) because in order to search a list, if there are n items we will need to do n comparisons
+to the item that we are actually checking. However, we also need to keep in mind three factors that may change the
+O value:
+ * the item is in the first position when we start with the search- in this case then the search becomes O(1)
+ * the item is not found until the last comparison is done. In this case the time is O(n)
+ * what about the average time, that is the time required inorder to perform n/2 comparisons. Well in this case it would
+   be O(n/2)
+
+However what about if we ordered out items, would we be able to achieve some sort of efficiency?
+
+Well to answer this question we need to think about the linked list. In order to find an item, we only need to look at
+all the items that are less than the number greater than the item.
+
+What do i mean by this? Imagine we have an ordered list that is::
+
+        [12, 23, 24, 35, 45, 47, 58, 59, 80]
+        if we wanted to find lets say 48: then we would hop over from item to item until we get 48 or
+        we figure out that the number we are on is bigger than 48. In ths case that number would be 58 and
+        once we hit it we can safely assume that 48 is not in the list.
+
+This algorithm is shown in the orderedsearch.py
