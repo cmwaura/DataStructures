@@ -36,17 +36,19 @@ then this implies that some of the items towards the back will never be bought b
  - isEmpty() check to see whether the stack is empty. Returns a boolean value and has no param
  - size() returns the number if items in the stack.
 
-Stack Operation 	Stack Contents 	    Return Value
-s.isEmpty() 	        []          	    True
-s.push(4) 	            [4]
-s.push('dog') 	        [4,'dog']
-s.peek() 	            [4,'dog'] 	        'dog'
-s.push(True) 	        [4,'dog',True]
-s.size() 	            [4,'dog',True] 	    3
-s.isEmpty() 	        [4,'dog',True] 	    False
-s.push(8.4) 	        [4,'dog',True,8.4]
-s.pop() 	            [4,'dog',True] 	    8.4
-s.pop() 	            [4,'dog'] 	        True
-s.size() 	            [4,'dog'] 	        2
+
+|Stack Operation |	Stack Contents 	  |  Return Value
+-----------------------------------------------------
+|s.isEmpty() 	   |     []          	 |   True
+|s.push(4) 	     |     [4]           |
+|s.push('dog') 	 |       [4,'dog']   |
+|s.peek() 	      |      [4,'dog'] 	  |     'dog'
+|s.push(True) 	  |    [4,'dog',True] |
+|s.size() 	      |    [4,'dog',True] | 	    3
+|s.isEmpty() 	   |    [4,'dog',True] |    False
+|s.push(8.4) 	   | [4,'dog',True,8.4]|
+|s.pop() 	       |    [4,'dog',True] |	    8.4
+|s.pop() 	       |    [4,'dog'] 	    |    True
+|s.size() 	      |    [4,'dog'] 	    |    2
 
 lets implement a stack in Python:
